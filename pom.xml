@@ -36,4 +36,15 @@
   <modules>
     <module>maestro-java-plugin-archetype</module>
   </modules>
+
+  <distributionManagement>
+    <repository>
+      <id>maestro-deploy</id>
+      <url>https://repo.maestrodev.com/archiva/repository/public-releases/</url>
+    </repository>
+    <snapshotRepository>
+      <id>maestro-deploy</id>
+      <url>https://repo.maestrodev.com/archiva/repository/public-snapshots/</url>
+    </snapshotRepository>
+  </distributionManagement>
 </project>
