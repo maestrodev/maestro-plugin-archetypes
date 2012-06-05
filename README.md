@@ -16,7 +16,7 @@ mvn archetype:generate \
     -Dauthor="Brett Porter" \
     -DtaskCommand=echo \
     -DtaskDescription="Echo, Echo" \
-    -DtaskGroup=test \
+    -DtaskGroup=echo \
     -DtaskName=Echo \
     -DtoolName=Notification
 ```
