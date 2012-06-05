@@ -1,0 +1,30 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+[
+    {
+      "name" : "${taskName}",
+      "description" : "${taskDescription}",
+      "author" : "${author}",
+      "version" : "${symbol_dollar}{project.version}-${symbol_dollar}{buildNumber}",
+      "class" : "${package}.EchoWorker",
+      "type" : "java",
+      "dependencies" : [ {
+        "name" : "${symbol_dollar}{project.artifactId}-${symbol_dollar}{project.version}.jar"
+      }, {
+        "name" : "pom.xml"
+      } ],
+      "task" : {
+        "command" : "/${taskGroup}/${taskCommand}",
+        "inputs" : {
+          "message" : {
+            "required" : true,
+            "type" : "String",
+            "value" : ""
+          }
+        },
+        "outputs" : {},
+        "tool_name" : "${toolName}"
+      }
+    }
+]

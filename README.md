@@ -4,6 +4,23 @@ Maestro Plugin Archetypes
 Archetypes for creating Maestro plugins. Currently contains one for a Java
 variant, but will later include one for a Ruby project also.
 
+Generating a Java Plugin
+------------------------
+
+```
+mvn archetype:generate \
+    -DarchetypeGroupId=com.maestrodev \
+    -DarchetypeArtifactId=maestro-java-plugin-archetype \
+    -DgroupId=com.maestrodev \
+    -DartifactId=test-maestro-plugin \
+    -Dauthor="Brett Porter" \
+    -DtaskCommand=echo \
+    -DtaskDescription="Echo, Echo" \
+    -DtaskGroup=test \
+    -DtaskName=Echo \
+    -DtoolName=Notification
+```
+
 License
 -------
 ```
