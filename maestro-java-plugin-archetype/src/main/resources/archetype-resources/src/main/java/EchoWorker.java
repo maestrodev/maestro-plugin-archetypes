@@ -21,8 +21,8 @@ public class EchoWorker
     {
         logger.info("Running task ${taskName}");
 
-        writeOutput("Running task ${taskName}");
-        writeOutput(getField("msg"));
+        writeOutput("Running task ${taskName}\n");
+        writeOutput(getField("msg") + "\n");
 
         setField("body", getField("msg"));
     }
