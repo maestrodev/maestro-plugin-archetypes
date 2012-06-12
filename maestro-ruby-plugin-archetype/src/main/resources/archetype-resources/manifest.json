@@ -1,0 +1,31 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+[
+    {
+      "name" : "${taskName}",
+      "description" : "${taskDescription}",
+      "license" : "Apache License 2.0",
+      "author" : "${author}",
+      "version" : "${version}",
+      "class" : "MaestroDev::EchoWorker",
+      "type" : "ruby",
+      "dependencies" : [ {
+        "name" : "emoji",
+        "version" : "0.1",
+        "source" : "http://rubygems.org/"
+      } ],
+      "task" : {
+        "command" : "/${taskGroup}/${taskCommand}",
+        "inputs" : {
+          "message" : {
+            "required" : true,
+            "type" : "String",
+            "value" : ""
+          }
+        },
+        "outputs" : {},
+        "tool_name" : "${toolName}"
+      }
+    }
+]

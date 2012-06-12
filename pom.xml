@@ -35,6 +35,7 @@
 
   <modules>
     <module>maestro-java-plugin-archetype</module>
+    <module>maestro-ruby-plugin-archetype</module>
   </modules>
 
   <distributionManagement>

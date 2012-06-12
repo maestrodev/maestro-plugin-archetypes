@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<archetype-descriptor
+    xsi:schemaLocation="http://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.0.0 http://maven.apache.org/xsd/archetype-descriptor-1.0.0.xsd"
+    name="maestro-bamboo-plugin"
+    xmlns="http://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <requiredProperties>
+    <requiredProperty key="pluginName">
+      <defaultValue>${artifactId}</defaultValue>
+    </requiredProperty>
+    <requiredProperty key="taskName"/>
+    <requiredProperty key="taskDescription"/>
+    <requiredProperty key="taskGroup"/>
+    <requiredProperty key="taskCommand"/>
+    <requiredProperty key="author"/>
+    <requiredProperty key="toolName"/>
+    <requiredProperty key="scmUrl">
+      <defaultValue>scm:git:git@github.com:maestrodev/${artifactId}.git</defaultValue>
+    </requiredProperty>
+    <requiredProperty key="deploymentRepositoryId">
+      <defaultValue>maestro-deploy</defaultValue>
+    </requiredProperty>
+    <requiredProperty key="deploymentRepositoryReleasesUrl">
+      <defaultValue>https://repo.maestrodev.com/archiva/repository/public-releases/</defaultValue>
+    </requiredProperty>
+    <requiredProperty key="deploymentRepositorySnapshotsUrl">
+      <defaultValue>https://repo.maestrodev.com/archiva/repository/public-snapshots/</defaultValue>
+    </requiredProperty>
+  </requiredProperties>
+  <fileSets>
+    <fileSet filtered="true" encoding="UTF-8">
+      <directory>spec</directory>
+      <includes>
+        <include>**/*.rb</include>
+      </includes>
+      <excludes>
+        <exclude>**/spec_helper.rb</exclude>
+      </excludes>
+    </fileSet>
+    <fileSet encoding="UTF-8">
+      <directory>spec</directory>
+      <includes>
+        <include>**/spec_helper.rb</include>
+      </includes>
+      <excludes>
+      </excludes>
+    </fileSet>
+    <fileSet filtered="true" encoding="UTF-8">
+      <directory>src</directory>
+      <includes>
+        <include>**/*.rb</include>
+      </includes>
+    </fileSet>
+    <fileSet filtered="true" encoding="UTF-8">
+      <directory></directory>
+      <includes>
+        <include>.gitignore</include>
+        <include>manifest.json</include>
+        <include>README.md</include>
+      </includes>
+    </fileSet>
+    <fileSet encoding="UTF-8">
+      <directory></directory>
+      <includes>
+        <include>Gemfile</include>
+        <include>Rakefile</include>
+      </includes>
+    </fileSet>
+  </fileSets>
+</archetype-descriptor>
