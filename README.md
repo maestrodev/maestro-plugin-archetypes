@@ -21,6 +21,23 @@ mvn archetype:generate \
     -DtoolName=Notification
 ```
 
+Generating a Ruby Plugin
+------------------------
+
+```
+mvn archetype:generate \
+    -DarchetypeGroupId=com.maestrodev \
+    -DarchetypeArtifactId=maestro-ruby-plugin-archetype \
+    -DgroupId=com.maestrodev \
+    -DartifactId=test-maestro-plugin \
+    -Dauthor="Brett Porter" \
+    -DtaskCommand=echo \
+    -DtaskDescription="Echo, Echo" \
+    -DtaskGroup=echo \
+    -DtaskName=Echo \
+    -DtoolName=Notification
+```
+
 License
 -------
 ```
