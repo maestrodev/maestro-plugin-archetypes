@@ -12,7 +12,7 @@ describe MaestroDev::EchoWorker do
 
     @test_participant.expects(:workitem => wi.to_h).at_least_once
 
-    @test_participant.emoji
+    @test_participant.echo
 
     wi.fields['__error__'].should eql('')
     @test_participant.workitem['__output__'].should match /Hello, World/
