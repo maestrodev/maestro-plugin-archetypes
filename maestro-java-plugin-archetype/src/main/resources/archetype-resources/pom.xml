@@ -28,20 +28,11 @@
     </snapshotRepository>
   </distributionManagement>
 
-  <repositories>
-    <repository>
-      <id>maestrodev-snapshots</id>
-      <url>https://repo.maestrodev.com/archiva/repository/all/</url>
-      <snapshots>
-      </snapshots>
-    </repository>
-  </repositories>
-
   <dependencies>
     <dependency>
       <groupId>com.maestrodev</groupId>
       <artifactId>maestro-plugin</artifactId>
-      <version>1.2-SNAPSHOT</version>
+      <version>1.2</version>
     </dependency>
 
     <dependency>
