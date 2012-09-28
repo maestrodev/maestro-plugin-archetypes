@@ -8,7 +8,7 @@ Generating a Java Plugin
 ------------------------
 
 ```
-mvn archetype:generate \
+mvn org.apache.maven.plugins:maven-archetype-plugin:2.1:generate \
     -DarchetypeGroupId=com.maestrodev \
     -DarchetypeArtifactId=maestro-java-plugin-archetype \
     -DgroupId=com.maestrodev \
@@ -25,7 +25,7 @@ Generating a Ruby Plugin
 ------------------------
 
 ```
-mvn archetype:generate \
+mvn org.apache.maven.plugins:maven-archetype-plugin:2.1:generate \
     -DarchetypeGroupId=com.maestrodev \
     -DarchetypeArtifactId=maestro-ruby-plugin-archetype \
     -DgroupId=com.maestrodev \
