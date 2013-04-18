@@ -35,7 +35,7 @@ end
 
 desc "Package plugin zip"
 task :package do
-  f = File.open("pom.xml") { |f| doc = Nokogiri::XML(f.read) }
+  doc = Nokogiri::XML(IO.read("pom.xml"))
   artifactId = doc.css('artifactId').first.text
   version = doc.css('version').first.text
   zip_file = "#{artifactId}-#{version}.zip"
