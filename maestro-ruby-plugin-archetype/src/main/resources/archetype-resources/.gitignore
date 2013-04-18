@@ -5,3 +5,4 @@ target/
 vendor
 package
 ${artifactId}-*.zip
+manifest.json
