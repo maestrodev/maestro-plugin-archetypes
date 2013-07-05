@@ -1,4 +1,4 @@
-source :rubygems
+source "https://rubygems.org"
 
 gem 'maestro_plugin', '>= 0.0.2'
 
