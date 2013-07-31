@@ -4,7 +4,7 @@
   <parent>
     <groupId>com.maestrodev.maestro.plugins.archetypes</groupId>
     <artifactId>maestro-plugin-archetypes</artifactId>
-    <version>1.1-SNAPSHOT</version>
+    <version>1.0</version>
   </parent>
 
   <artifactId>maestro-ruby-plugin-archetype</artifactId>
