@@ -1,18 +1,15 @@
 source "https://rubygems.org"
 
-gem 'maestro_plugin', '>= 0.0.2'
+gem 'maestro_plugin', '>= 0.0.14'
 
 #dependencies
 gem 'emoji', "0.1"
 
 group :development do
+  gem 'maestro-plugin-rake-tasks'
   gem 'rake', '>=0.9.2.2'
-  gem 'nokogiri'
-  gem 'zippy'
 end
 
 group :test do
   gem 'rspec'
-  gem 'mocha'
-  gem 'rcov'
 end

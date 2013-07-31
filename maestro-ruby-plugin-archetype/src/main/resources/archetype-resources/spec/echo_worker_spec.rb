@@ -1,20 +1,27 @@
 require 'spec_helper'
+require 'echo_worker'
 
-describe MaestroDev::EchoWorker do
-  before :all do
-    @test_participant = MaestroDev::EchoWorker.new
+describe MaestroDev::Plugin::EchoWorker do
+
+  before do
+    subject.workitem = workitem
   end
 
-  it "should echo a message" do
-    wi = Ruote::Workitem.new({'fields' => {
-                              'message' => 'Hello, World',
-                              }})
+  context "when echoing a message" do
+    let(:workitem) {{'fields' => {'message' => 'Hello, World'}}}
+    before { subject.echo }
 
-    @test_participant.expects(:workitem => wi.to_h).at_least_once
-
-    @test_participant.echo
-
-    wi.fields['__error__'].should eql('')
-    @test_participant.workitem['__output__'].should match /Hello, World/
+    its(:error) { should be_nil }
+    it "should print the output" do
+      expect(subject.workitem[Maestro::MaestroWorker::OUTPUT_META]).to match(/Hello, World/)
+    end
   end
+
+  context "when missing fields" do
+    let(:workitem) {{'fields' => {}}}
+    it "should fail" do
+      expect { subject.echo }.to raise_error(MaestroDev::Plugin::ConfigError)
+    end
+  end
+
 end

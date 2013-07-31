@@ -15,7 +15,7 @@ import org.json.simple.parser.ParseException;
 import org.junit.Test;
 
 /**
- * Tests for Maestro Cloud plugin.
+ * Tests for Maestro plugin.
  */
 public class EchoWorkerTest
 {
@@ -32,7 +32,7 @@ public class EchoWorkerTest
 
         worker.setWorkitem( loadJson( "echo" ) );
 
-        // provision
+        // entry point
         worker.${taskCommand}();
 
         assertNull( worker.getError() );

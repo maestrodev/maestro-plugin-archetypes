@@ -55,15 +55,17 @@
       <directory></directory>
       <includes>
         <include>.gitignore</include>
-        <include>manifest.json</include>
+        <include>manifest.template.json</include>
         <include>README.md</include>
       </includes>
     </fileSet>
     <fileSet encoding="UTF-8">
       <directory></directory>
       <includes>
+        <include>.ruby-version</include>
         <include>Gemfile</include>
         <include>Rakefile</include>
+        <include>LICENSE</include>
       </includes>
     </fileSet>
   </fileSets>

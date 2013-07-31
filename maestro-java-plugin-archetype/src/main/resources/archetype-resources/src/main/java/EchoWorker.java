@@ -6,7 +6,7 @@ package ${package};
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.maestrodev.MaestroWorker;
+import com.maestrodev.maestro.plugins.MaestroWorker;
 
 public class EchoWorker
     extends MaestroWorker

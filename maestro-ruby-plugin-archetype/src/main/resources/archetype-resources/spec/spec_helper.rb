@@ -1,13 +1,10 @@
 require 'rubygems'
 require 'rspec'
-require 'mocha'
 
-$LOAD_PATH.unshift(File.dirname(__FILE__) + '/../src') unless $LOAD_PATH.include?(File.dirname(__FILE__) + '/../src')
-
-
-require 'echo_worker'
+$:.unshift File.expand_path '../../src', __FILE__
 
 RSpec.configure do |config|
-
-
+  config.before do
+    Maestro::MaestroWorker.mock!
+  end
 end

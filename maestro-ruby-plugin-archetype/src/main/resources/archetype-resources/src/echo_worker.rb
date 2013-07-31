@@ -1,28 +1,24 @@
-require 'maestro_agent'
+require 'maestro_plugin'
 require 'emoji'
 
 module MaestroDev
-  class EchoWorker < Maestro::MaestroWorker
+  module Plugin
+    class EchoWorker < Maestro::MaestroWorker
 
-    def validate_fields
-      set_error('')
+      def validate_fields
+        raise ConfigError, 'Missing message field' if get_field('message').nil?
+      end
 
-      raise 'Invalid Field Set, Missing message' if get_field('message').nil?
-    end
-
-    def ${taskCommand}
-      begin
+      def ${taskCommand}
         Maestro.log.info "Starting Echo Worker"
         validate_fields
 
         emoji = Emoji.create(:iphone)
         write_output "#{emoji.musical_score} #{get_field('message')}\n"
-      rescue Exception => e
-        set_error(e.message)
+
+        Maestro.log.info "***********************Completed Echo***************************"
       end
 
-      Maestro.log.info "***********************Completed Echo***************************"
     end
-
   end
 end
